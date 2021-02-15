@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "react-query-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,8 +10,12 @@
     "@types/node": "^12.20.1",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "axios": "^0.21.1",
+    "eslint-config-prettier": "^7.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-query": "^3.9.6",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "typescript": "^4.1.5",
     "web-vitals": "^1.1.0"
@@ -24,8 +28,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-query",
+      "react-query/jest"
     ]
   },
   "browserslist": {
