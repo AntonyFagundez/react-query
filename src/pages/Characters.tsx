@@ -1,6 +1,6 @@
 import { FC } from "react";
 import {  useQuery } from "react-query";
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 
 const Characters: FC<{}> = () => {
