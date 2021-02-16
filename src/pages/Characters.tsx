@@ -1,12 +1,12 @@
-import { FC } from "react";
-import {  useQuery } from "react-query";
+import { FC } from 'react';
+import {  useQuery } from 'react-query';
 import axios from 'axios';
 
 
 const Characters: FC<{}> = () => {
 
-    const characters = useQuery<Character[], Error>('characters', async () => {
-        const { data: { results } } = await axios.get<APIResponse>('https://swapi.dev/api/people/');
+    const characters = useQuery<StarWarsCharacter[], Error>('characters', async () => {
+        const { data: { results } } = await axios.get<StarWarsCharactersResponse>('https://swapi.dev/api/people/');
         return results;
     });
 
@@ -28,7 +28,7 @@ const Characters: FC<{}> = () => {
                 !characters.isFetching && characters.data &&
                 characters.data?.map(({ name, gender }, i) => {
                     return (
-                        <div key={`Character-container-${i}`}>
+                        <div key={`Character-container-${i}`} className={'p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4'}>
                             Name {name}
                             <br key={`br-character-first-${i}`} />
                             {gender !== 'n/a' && (
@@ -43,7 +43,7 @@ const Characters: FC<{}> = () => {
                 })
             }
         </>
-    )
-}
+    );
+};
 
 export default Characters;

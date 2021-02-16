@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES5",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -23,5 +23,6 @@
   "include": [
     "src"
   ],
-  "files": ["./src/index.d.ts"]
+  "files": ["./src/RickAndMorty.d.ts", "./src/StarWars.d.ts"],
+  "exclude": [".stylelintrc"]
 }

@@ -1,4 +1,4 @@
-interface Character {
+interface StarWarsCharacter {
     birth_year: string,
     eye_color:string,
     films: string[],
@@ -17,9 +17,11 @@ interface Character {
     vehicles: string[]
 }
 
-interface APIResponse {
+interface StarWarsAPIResponse<T> {
     count: number,
     next: null | string
     previous: null | string,
-    results: Character[]
+    results: Array<T>
 }
+
+type StarWarsCharactersResponse = StarWarsAPIResponse<StarWarsCharacter>;
