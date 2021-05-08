@@ -11,7 +11,7 @@ const Characters: FC<{}> = () => {
     });
 
     return (
-        <>
+        <div className={'flex flex-col space-y-7 items-center container '}>
             {
                 characters.isFetching ? 'Loading...' : null
             }
@@ -28,12 +28,12 @@ const Characters: FC<{}> = () => {
                 !characters.isFetching && characters.data &&
                 characters.data?.map(({ name, gender }, i) => {
                     return (
-                        <div key={`Character-container-${i}`} className={'p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4'}>
-                            Name {name}
+                        <div key={`Character-container-${i}`} className={'p-6 max-w-sm  mt-2  bg-white rounded-xl shadow-md flex  items-center space-x-2'}>
+                            <div className={'text-gray-600'} >Name: </div> {name}
                             <br key={`br-character-first-${i}`} />
                             {gender !== 'n/a' && (
                                 <div key={`Gender-container-${1}`}>
-                                    {`Gender: ${gender}`}
+                                    <div className={'text-gray-600'} >Gender: </div> {gender}
                                     <br key={`br-gender-${i}`} />
                                 </div>
                             )}
@@ -42,7 +42,7 @@ const Characters: FC<{}> = () => {
                     );
                 })
             }
-        </>
+        </div>
     );
 };
 
